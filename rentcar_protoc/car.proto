@@ -1,0 +1,87 @@
+syntax = "proto3";
+
+option go_package = "./car";
+
+// The car_service definition.
+service CarService {
+    rpc CreateCar (CreateCarRequest) returns (Car) {}
+    rpc UpdateCar (UpdateCarRequest) returns (Car) {}
+    rpc DeleteCar (DeleteCarRequest) returns (Car) {}
+    rpc GetCarByID (GetCarByIDRequest) returns (GetCarByIDResponse) {}
+    rpc GetCarList (GetCarListRequest) returns (GetCarListResponse) {}
+}
+
+message CreateCarRequest {
+    string model = 1;
+    string color = 2;
+    string car_type = 3;
+    string mileage = 4;
+    string year = 5;
+    string price = 6;
+    string brand_id = 7;
+}
+
+message Car {
+    string car_id = 1;
+    string model = 2;
+    string color = 3;
+    string car_type = 4;
+    string mileage = 5;
+    string year = 6;
+    string price = 7;
+    string brand_id = 8;
+    string created_at = 9;
+    string updated_at = 10;
+}
+
+message UpdateCarRequest {
+    string id = 1;
+    string model = 2;
+    string color = 3;
+    string car_type = 4;
+    string mileage = 5;
+    string year = 6;
+    string price = 7;
+    string brand_id = 8;
+}
+
+message DeleteCarRequest {
+    string id = 1;
+}
+
+message GetCarByIDRequest {
+    string id = 1;
+}
+
+message GetCarByIDResponse {
+    message Brand {
+        string brand_id = 1;
+        string name = 2;
+        string country = 3;
+        string manufacturer = 4;
+        string aboutBrend = 5;
+        string created_at = 6;
+        string updated_at = 7;
+    }
+    string car_id = 1;
+    string model = 2;
+    string color = 3;
+    string car_type = 4;
+    string mileage = 5;
+    string year = 6;
+    string price = 7;
+    string brand_id = 8;
+    string created_at = 9;
+    string updated_at = 10;
+}
+
+message GetCarListRequest {
+    int32 offset = 1;
+    int32 limit = 2;
+    string search =3;
+}
+
+message GetCarListResponse {
+    repeated Car Cars = 1;
+}
+
