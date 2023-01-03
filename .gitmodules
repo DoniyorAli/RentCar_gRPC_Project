@@ -1,0 +1,12 @@
+[submodule "rent_car_service"]
+	path = rent_car_service
+	url = git@github.com:DoniyorAli/rent_car_service.git
+[submodule "rentcar_api_gateway"]
+	path = rentcar_api_gateway
+	url = git@github.com:DoniyorAli/rentcar_api_gateway.git
+[submodule "rental_service"]
+	path = rental_service
+	url = git@github.com:DoniyorAli/rental_service.git
+[submodule "auth_rentcar_service"]
+	path = auth_rentcar_service
+	url = git@github.com:DoniyorAli/auth_rentcar_service.git
