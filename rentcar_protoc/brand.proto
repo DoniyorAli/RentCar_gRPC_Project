@@ -15,7 +15,7 @@ message CreateBrandRequest {
     string name = 1;
     string country = 2;
     string manufacturer = 3;
-    string aboutBrend = 4;
+    string about_brand = 4;
 }
 
 message Brand {
@@ -23,7 +23,7 @@ message Brand {
     string name = 2;
     string country = 3;
     string manufacturer = 4;
-    string aboutBrend = 5;
+    string about_brand = 5;
     string created_at = 6;
     string updated_at = 7;
 }
@@ -33,7 +33,7 @@ message UpdateBrandRequest {
     string name = 2;
     string country = 3;
     string manufacturer = 4;
-    string aboutBrend = 5;
+    string about_brand = 5;
 }
 
 message DeleteBrandRequest {

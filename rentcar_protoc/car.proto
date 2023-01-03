@@ -59,7 +59,7 @@ message GetCarByIDResponse {
         string name = 2;
         string country = 3;
         string manufacturer = 4;
-        string aboutBrend = 5;
+        string about_brand = 5;
         string created_at = 6;
         string updated_at = 7;
     }
@@ -70,7 +70,7 @@ message GetCarByIDResponse {
     string mileage = 5;
     string year = 6;
     string price = 7;
-    string brand_id = 8;
+    Brand brand = 8;
     string created_at = 9;
     string updated_at = 10;
 }

@@ -1,0 +1,95 @@
+syntax = "proto3";
+
+option go_package = "./rental";
+package genproto;
+
+// The rental_service definition.
+service RentalService {
+
+    rpc CreateRental (CreateRentalRequest) returns (Rental) {}
+    rpc UpdateRental (UpdateRentalRequest) returns (Rental) {}
+    rpc DeleteRental (DeleteRentalRequest) returns (Rental) {}
+    rpc GetRentalByID (GetRentalByIDRequest) returns (GetRentalByIDResponse) {}
+    rpc GetRentalList (GetRentalListRequest) returns (GetRentalListResponse) {}
+}
+
+message CreateRentalRequest {
+    string car_id = 1;
+    string customer_id = 2; 
+    string start_date = 3;
+    string end_date = 4;
+    string payment = 5;
+}
+
+message Rental {
+    string rental_id = 1;
+    string car_id = 2;
+    string customer_id = 3; 
+    string start_date = 4;
+    string end_date = 5;
+    string payment = 6;
+    string created_at = 7;
+    string updated_at = 8;
+}
+
+message UpdateRentalRequest {
+    string rental_id = 1;
+    string car_id = 2;
+    string customer_id = 3; 
+    string start_date = 4;
+    string end_date = 5;
+    string payment = 6;
+}
+
+message DeleteRentalRequest {
+    string rental_id = 1;
+}
+
+message GetRentalByIDRequest {
+    string rental_id = 1;
+}
+
+message GetRentalByIDResponse {
+    message Car {
+        string car_id = 1;
+        string model = 2;
+        string color = 3;
+        string year = 4;
+        string mileage = 5;
+        string brand_id = 6;
+        string created_at = 7;
+        string updated_at = 8;
+    }
+    message User {
+        string id = 1;
+        string fname = 2;
+        string lname = 3;
+        string username = 4;
+        string password = 5;
+        string user_type = 6;
+        string address = 7;
+        string phone = 8;
+        string created_at = 9;
+        string updated_at = 10;
+    }
+    string rental_id = 1;
+    string car_id = 2;
+    Car car = 3;
+    string customer_id = 4;
+    User customer = 5; 
+    string start_date = 6;
+    string end_date = 7;
+    string payment = 8;
+    string created_at = 9;
+    string updated_at = 10;
+}
+
+message GetRentalListRequest {
+    int32 offset = 1;
+    int32 limit = 2;
+    string search = 3;
+}
+
+message GetRentalListResponse {
+    repeated Rental rentals = 1;
+}
